@@ -18,8 +18,10 @@ These are the icons that have been made so far:
 
 ![Listing of icons in this theme](images/readme/listing.png)
 
-*And with more icons to come...* [Is your favorite language missing?](https://github.com/CiberTurtle/Sharp-Icons/issues/new/choose)
+*And with more icons to come...* [Is your favorite language missing?](https://github.com/rylydou/sharp-icons/issues/new/choose)
+
+Want to add an icon or file association? See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ---
 
-[Github](https://github.com/CiberTurtle/Sharp-Icons) | [Figma Project](https://www.figma.com/file/XTSnjiwI5MXJnqEwZDetnT/VSCode-Icons)
+[Github](https://github.com/rylydou/sharp-icons) | [Figma Project](https://www.figma.com/file/XTSnjiwI5MXJnqEwZDetnT/VSCode-Icons)

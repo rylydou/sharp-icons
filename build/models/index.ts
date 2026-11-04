@@ -1,5 +1,0 @@
-export * from './fileIcon';
-export * from './fileIconNameCombo';
-export * from './folderIcon';
-export * from './iconTheme';
-export * from './palette';
