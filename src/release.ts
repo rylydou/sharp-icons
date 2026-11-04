@@ -68,7 +68,13 @@ $.cwd(ROOT);
 // Never pass long-lived tokens through: vsce refuses `--oidc` alongside VSCE_PAT,
 // and ovsx silently prefers OVSX_PAT over trusted publishing.
 const { VSCE_PAT, OVSX_PAT, ...env } = Bun.env;
-$.env({ ...env, PATH: [join(ROOT, 'node_modules', '.bin'), Bun.env.PATH].join(delimiter) });
+$.env({
+	...env,
+	PATH: [join(ROOT, 'node_modules', '.bin'), Bun.env.PATH].join(delimiter),
+	// Open VSX processes every file in the VSIX before it responds, and this one has
+	// ~1,200 icons. ovsx gives up after 30s by default, so allow 5 minutes.
+	OVSX_TIMEOUT: Bun.env.OVSX_TIMEOUT ?? String(5 * 60_000),
+});
 
 if (command === 'publish' && !args['dry-run']) {
 	if (!args['allow-dirty']) {
