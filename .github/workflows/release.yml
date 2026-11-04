@@ -1,0 +1,46 @@
+name: Release
+
+# Push a tag matching the package.json version (e.g. `git tag v1.3.0 && git push --tags`)
+# to publish to the VS Marketplace and Open VSX, and attach the VSIX to a GitHub release.
+#
+# Publishing uses trusted publishing (OIDC), so there are no tokens to store. Each
+# marketplace must have a trusted publisher registered for this repo and this
+# workflow file (`release.yml`); see CONTRIBUTING.md. Renaming this file breaks that.
+
+on:
+  push:
+    tags: ['v*']
+  workflow_dispatch:
+
+permissions: {}
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # create the GitHub release
+      id-token: write # request the OIDC token the marketplaces exchange for a publish credential
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          persist-credentials: false
+      - uses: oven-sh/setup-bun@v2
+      - run: bun install --frozen-lockfile
+
+      - name: Check tag matches package.json version
+        if: github.ref_type == 'tag'
+        run: |
+          version="v$(bun -p 'require("./package.json").version')"
+          [ "$version" = "$GITHUB_REF_NAME" ] || { echo "tag $GITHUB_REF_NAME != package.json $version"; exit 1; }
+
+      - run: bun run check
+
+      # Packages, then publishes to both marketplaces. Re-runs are safe (--skip-duplicate).
+      - run: bun run publish
+
+      - name: Attach VSIX to GitHub release
+        if: github.ref_type == 'tag' && !cancelled() && hashFiles('bin/*.vsix') != ''
+        run: gh release create "$GITHUB_REF_NAME" bin/*.vsix --generate-notes || gh release upload "$GITHUB_REF_NAME" bin/*.vsix --clobber
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}

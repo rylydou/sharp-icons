@@ -1,5 +1,19 @@
 # Change Log
 
+## [1.3.0]
+- Assigned existing icons to many more files, including:
+  - Images: `.avif`, `.heic`, `.jxl`, `.tiff`, `.icns`, `.qoi`, camera RAW, and more
+  - Audio and video: `.m4a`, `.aac`, `.opus`, `.midi`, `.m4v`, `.wmv`, `.mpeg`, and more
+  - Languages: `.mjs`, `.mts`, `.cts`, `.pyi`, `.kts`, `.cc`, `.cxx`, `.hh`, `.ino`, `.luau`, `.heex`, `.cabal`, `.wgsl`, `.metal`, and more
+  - Config: `.env` files, `.npmrc`, `.nvmrc`, `.prettierrc`, `.clang-format`, `CMakeLists.txt`, `justfile`, Docker Compose files, and more
+  - Lockfiles: `bun.lock`, `uv.lock`, `poetry.lock`, `Gemfile.lock`, `composer.lock`, `flake.lock`, and more
+  - Keys and certificates (`.pem`, `.crt`, `.p12`, `id_rsa`, ...) use the lock icon
+  - AI agent files (`AGENTS.md`, `CLAUDE.md`, `llms.txt`, `.cursorrules`) use the robot icon
+  - Storybook stories and SPIR-V binaries now use their icons, which were previously unused
+  - Many more dot folders (`.idea`, `.next`, `.venv`, `.turbo`, ...)
+- Fixed `yarn.lock` and `Cargo.lock` showing the YAML/TOML icon instead of the lock icon
+- Fixed the orange in rainbow (shader) icons not changing with the palette
+
 ## [1.2.11]
 - Add Shopify Liquid icon
 
