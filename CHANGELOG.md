@@ -1,5 +1,9 @@
 # Change Log
 
+## [1.3.1]
+- Added Swift icon
+- 
+
 ## [1.3.0]
 - Assigned existing icons to many more files, including:
   - Images: `.avif`, `.heic`, `.jxl`, `.tiff`, `.icns`, `.qoi`, camera RAW, and more

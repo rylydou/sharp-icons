@@ -358,6 +358,18 @@ export const fileIcons = {
 		extensions: ['odin'],
 		languageIds: ['odin'],
 	},
+	swift: {
+		extensions: ['swift'],
+		languageIds: ['swift'],
+	},
+	gleam: {
+		extensions: ['gleam'],
+		languageIds: ['gleam'],
+	},
+	nix: {
+		extensions: ['nix'],
+		languageIds: ['nix'],
+	},
 
 	// --- .NET / JVM ----------------------------------------------------------
 	csharp: {
