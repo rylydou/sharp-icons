@@ -43,6 +43,7 @@ export const fileIcons = {
 			'png', 'apng', 'jpg', 'jpeg', 'jpe', 'jfif', 'pjpeg', 'pjp', 'gif', 'webp', 'avif', 'jxl',
 			'heic', 'heif', 'bmp', 'ico', 'icns', 'cur', 'tif', 'tiff', 'tga', 'dds', 'exr', 'hdr', 'qoi',
 			'psd', 'psb', 'xcf', 'kra', 'ora', 'pbm', 'pgm', 'ppm', 'pnm', 'raw', 'dng', 'cr2', 'cr3', 'nef', 'arw',
+			...[1, 2, 3, 4, 5, 6, 7, 8, 10, 12, 16, 20, 24, 32].map((x) => `${x}bpp`)
 		],
 	},
 	svg: {

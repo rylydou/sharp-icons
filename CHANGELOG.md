@@ -1,5 +1,8 @@
 # Change Log
 
+## [1.3.3]
+- Assigned `.#bpp` files
+
 ## [1.3.2]
 - Assigned `.inc` files
 
