@@ -328,8 +328,8 @@ export const fileIcons = {
 
 	// --- Systems languages ---------------------------------------------------
 	assembly: {
-		extensions: ['asm', 's', 'nasm', 'a51'],
-		languageIds: ['asm', 'nasm', 'arm', 'riscv', 'm'],
+		extensions: ['asm', 'inc', 's', 'nasm', 'a51'],
+		languageIds: ['asm', 'nasm', 'arm', 'riscv', 'm', 'gbz80'],
 	},
 	c: {
 		extensions: ['c', 'i'],
